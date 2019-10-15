@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>User_details</title>
+</head>
+<body>
+    <h1>Here are the user details</h1>
+    {% if user %}
+        <ol>
+        {% for persion in user %}
+        <li>User Info</li>
+            <ul>
+            <li>First Name:{{persion.first_name}} </li>
+            <li>Last Name:{{persion.last_name}} </li>
+            <li>Email :{{persion.email}} </li>
+            </ul>
+        {% endfor %}
+        </ol>
+    {% else %}
+    {% endif %}
+</body>
+</html>
