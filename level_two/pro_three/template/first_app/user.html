@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+    <title>User_details</title>
+</head>
+<body>
+    <h1>Here are the all user details</h1>
+    {% if user %}
+        <table>
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Email</th>
+            </thead>
+            {% for entry in detail %}
+                <tr>
+                <td>{{entry.first_name}} </td>
+                <td>{{entry.last_name}} </td>
+                <td>{{entry.age}} </td>
+                <td>{{entry.address}} </td>
+                <td>{{entry.email}} </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+    <p>No data found</p>
+    {% endif %}
+</body>
+</html>
