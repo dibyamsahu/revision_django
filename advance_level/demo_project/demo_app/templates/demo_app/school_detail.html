@@ -1,0 +1,15 @@
+{% extends "demo_app/demo_app_base.html" %}
+{% block body_block %}
+    <h1>This is details of this school!!!</h1>
+        <p>School: {{school_detail.name}}</p>
+        <p>Principal: {{school_detail.principal}} </p>
+        <p>Address: {{school_detail.address}} </p>
+    <h1>Here are the details of the students!!!</h1>
+        {% for student in school_detail.students.all %}
+            <p>{{student.name}} is {{student.age}} years old!! </p>
+        {% endfor %}
+    <div class="container">
+        <p><a class="btn btn-warning" href="{% url 'demo_app:update' pk=school_detail.pk %}">Update</a></p>
+        <p><a class="btn btn-danger" href="{% url 'demo_app:delete' pk=school_detail.pk %}">Delete</a></p>
+    </div>
+{% endblock  %}

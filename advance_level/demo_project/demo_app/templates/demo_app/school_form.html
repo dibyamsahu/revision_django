@@ -1,0 +1,17 @@
+{% extends "demo_app/demo_app_base.html" %}
+{% block body_block %}
+    <div class="jumbotron">
+        <h1>
+            {% if form.instance.pk %}
+                Create School
+            {% else %}
+                Update School
+            {% endif %}
+        </h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Create">
+        </form>
+    </div>
+{% endblock  %}

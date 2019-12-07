@@ -1,0 +1,12 @@
+{% extends "demo_app/demo_app_base.html" %}
+
+{% block body_block %}
+    <div class="container">
+        <h1>Do you want to delete {{school.name}} </h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="Delete">
+            <p><a class="btn btn-link" href="{% url 'demo_app:detail' pk=school.pk%}">Cancel</a></p>
+        </form>
+    </div>
+{% endblock  %}

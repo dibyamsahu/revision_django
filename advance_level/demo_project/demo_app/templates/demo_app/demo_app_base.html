@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="{% url 'index' %}">Home</a></li>
+            <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+            <li><a class-="navbar-link" href="{% url 'demo_app:list' %}">Schools</a></li>
+            <li><a class="navbar-link" href="{% url 'demo_app:create' %}">Create</a></li>
+        </ul>
+    </nav>
+</div>
+    <div class="container">
+        {% block body_block %}
+        
+        {% endblock  %}
+    </div>
+</body>
+</html>
